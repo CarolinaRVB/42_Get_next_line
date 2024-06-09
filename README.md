@@ -64,6 +64,10 @@ To use the "Get Next Line" function in your C project, follow these steps:
 - Make sure to handle memory allocation for the `line` pointer properly. You must free the memory allocated for each line after you're done processing it.
 - This function is designed to handle reading from a file descriptor, which means it can be used for reading from standard input (`stdin`), files, sockets, or any other file descriptor source.
 
-
+## Testing
+- Run the following command:
+    ```bash
+    cd get_next_line_original && cc -Wall -Wextra -Werror -g -I. get_next_line.c get_next_line_utils.c Tester.c -o test && ./test
+    ```
 ## License
 This project is licensed under the [MIT License](LICENSE).

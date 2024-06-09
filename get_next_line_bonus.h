@@ -13,6 +13,11 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+
+# endif
+
 # include <stddef.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -28,5 +33,5 @@ char	*ft_strjoin(char *s1, char *s2);
 void	*ft_calloc(size_t nmemb, size_t size);
 size_t	ft_strlen(const char *s);
 void	createstash(char **stash, char *buff);
-void	ft_bzero(void *s, size_t n);
+// void	ft_bzero(void *s, size_t n);
 #endif

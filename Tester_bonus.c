@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 11:39:55 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/06/09 14:46:26 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/06/09 14:43:07 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,21 +71,21 @@ int	get_line(int fd, int flag)
 
 int main(void)
 {
-	int	fd1 = open("tests/test1.txt", O_RDONLY);
-	int	fd2 = open("tests/test2.txt", O_RDONLY);
-	int	fd3 = open("tests/test3.txt", O_RDONLY);
-	int	fd4 = open("tests/test4.txt", O_RDONLY);
-	int	fd5 = open("tests/test5.txt", O_RDONLY);
-	int	fd6 = open("tests/test6.txt", O_RDONLY);
-	int	fd7 = open("tests/invalid.txt", O_RDONLY);
-	int	fd8 = open("tests/test8.txt", O_RDONLY);
+	int	fd1 = open("test1.txt", O_RDONLY);
+	int	fd2 = open("test2.txt", O_RDONLY);
+	int	fd3 = open("test3.txt", O_RDONLY);
+	int	fd4 = open("test4.txt", O_RDONLY);
+	int	fd5 = open("test5.txt", O_RDONLY);
+	int	fd6 = open("test6.txt", O_RDONLY);
+	int	fd7 = open("invalid.txt", O_RDONLY);
+	int	fd8 = open("test8.txt", O_RDONLY);
 	
 	printf(GREEN "\n########## Get Next Line Tester ##########\n" RESET);
 	printf(BLUE "\nTest 1: 4 lines made of 1's\n" RESET);
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd1, 1);
 	close(fd1);
-	fd1 = open("tests/test1.txt", O_RDONLY);
+	fd1 = open("test1.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd1, 0);
 	close(fd1);
@@ -95,7 +95,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd2, 1);
 	close(fd2);
-	fd2 = open("tests/test2.txt", O_RDONLY);
+	fd2 = open("test2.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd2, 0);
 	close(fd2);
@@ -105,7 +105,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd3, 1);
 	close(fd3);
-	fd3 = open("tests/test3.txt", O_RDONLY);
+	fd3 = open("test3.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd3, 0);
 	close(fd3);
@@ -119,7 +119,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd4, 1);
 	close(fd4);
-	fd4 = open("tests/test4.txt", O_RDONLY);
+	fd4 = open("test4.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd4, 0);
 	close(fd4);
@@ -134,7 +134,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd5, 1);
 	close(fd5);
-	fd5 = open("tests/test5.txt", O_RDONLY);
+	fd5 = open("test5.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd5, 0);
 	close(fd5);
@@ -148,7 +148,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd6, 1);
 	close(fd6);
-	fd6 = open("tests/test6.txt", O_RDONLY);
+	fd6 = open("test6.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd6, 0);
 	close(fd6);
@@ -158,7 +158,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd7, 1);
 	close(fd7);
-	fd7 = open("tests/test7.txt", O_RDONLY);
+	fd7 = open("test7.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd7, 0);
 	close(fd7);
@@ -168,7 +168,7 @@ int main(void)
 	printf(MAGENTA "Get Next Line:\n" RESET);
 	get_line(fd8, 1);
 	close(fd8);
-	fd8 = open("tests/test8.txt", O_RDONLY);
+	fd8 = open("test8.txt", O_RDONLY);
 	printf(YELLOW "\nGetline:\n" RESET);
 	get_line(fd8, 0);
 	close(fd8);

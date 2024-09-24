@@ -123,23 +123,67 @@ void	ft_clean(char **stash)
 	*stash = newstash;
 }
 
-// #include <fcntl.h>
-// #include <unistd.h>
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void) {
-// 	int fd = open("example.txt", O_RDONLY);
-// 	if (fd == -1) {
-// 		perror("Failed to open file");
-// 		return 1;
-// 	}
+#include "get_next_line.h"
+#include <fcntl.h>
 
-// 	char *line;
-// 	while ((line = get_next_line(fd)) != NULL) {
-// 		printf("%s\n", line);
-// 		free(line);
-// 	}
+int main(void)
+{
+    int fd1 = open("tests/test1.txt", O_RDONLY);
+    int fd2 = open("tests/test4.txt", O_RDONLY);
+    int fd3 = open("tests/test8.txt", O_RDONLY);
 
-// 	close(fd);
-// 	return 0;
-// }
+    if (fd1 < 0 || fd2 < 0 || fd3 < 0)
+    {
+        perror("Error opening files");
+        return (1);
+    }
+
+    char *line1 = NULL;
+    char *line2 = NULL;
+    char *line3 = NULL;
+	char *line4 = NULL;
+
+    // Read from all file descriptors simultaneously, one line at a time
+    while (1)
+    {
+        line1 = get_next_line(fd1);
+        line2 = get_next_line(fd2);
+        line3 = get_next_line(fd3);
+		line4 = get_next_line(0);
+
+        if (!line1 && !line2 && !line3 && !line4)
+            break;
+
+        if (line1)
+        {
+            printf("FD1: %s", line1);
+            free(line1);
+        }
+
+        if (line2)
+        {
+            printf("FD2: %s", line2);
+            free(line2);
+        }
+
+        if (line3)
+        {
+            printf("FD3: %s", line3);
+            free(line3);
+        }
+
+		if (line4)
+		{
+			printf("FD4: %s", line4);
+			free(line4);
+		}
+
+        printf("\n");
+    }
+
+    close(fd1);
+    close(fd2);
+    close(fd3);
+
+    return (0);
+}

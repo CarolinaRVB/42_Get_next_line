@@ -123,40 +123,27 @@ void	ft_clean(char **stash)
 	*stash = newstash;
 }
 
-// #include <fcntl.h>
-// #include <unistd.h>
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void) {
-// 	int fd = open("example.txt", O_RDONLY);
-// 	if (fd == -1) {
-// 		perror("Failed to open file");
-// 		return 1;
-// 	}
-
-// 	char *line;
-// 	int		w;
-// 	w = 0;
-// 	while (1)
-// 	{
-// 		line = get_next_line(fd);
-// 		if (!line)
-// 			break ;
-// 		if (w == 0)
-// 		{
-// 			w = ft_strlen_nl(line);
-// 			printf("%d\n", w);
-// 			printf("%ld\n", ft_strlen_nl(line));
-// 		}
-// 		else if (w != ft_strlen_nl(line))
-// 		{
-// 			free(line);
-// 			break ;
-// 		}
-// 		printf("%s\n", line);
-// 		free(line);
-// 	}
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+int main(void) {
+	// int fd = open("example2.txt", O_RDONLY);
+	// if (fd == -1) {
+	// 	perror("Failed to open file");
+	// 	return 1;
+	// }
+	int fd = 0;
+	char *line;
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+		{	break ;}
+		printf("%s", line);
+		free(line);
+	}
 	
-// 	close(fd);
-// 	return 0;
-// }
+	close(fd);
+	return 0;
+}
